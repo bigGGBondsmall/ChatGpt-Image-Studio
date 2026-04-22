@@ -850,6 +850,19 @@ export default function AccountsPage() {
           </div>
         </div>
 
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-amber-950">
+          <div className="flex items-center gap-2 font-medium">
+            <CircleAlert className="size-4" />
+            导入与使用风险提示
+          </div>
+          <div className="mt-2">
+            账号导入、轮换与调用仅限合法合规用途，严禁用于违法违规、批量滥用、套利倒卖或其他违反平台规则的行为。
+          </div>
+          <div className="mt-1">
+            请尽量使用不常用的小号进行测试，不要导入自己的重要账号、常用账号或高价值账号；使用本项目存在账号受限、临时封禁或永久封禁的风险，相关后果需自行承担。
+          </div>
+        </div>
+
         {isLoading && accounts.length === 0 ? (
           <Card className="rounded-2xl border-white/80 bg-white/90 shadow-sm">
             <CardContent className="flex flex-col items-center justify-center gap-3 px-6 py-14 text-center">

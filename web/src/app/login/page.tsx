@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { LoaderCircle, LockKeyhole, Sparkles } from "lucide-react";
+import { CircleAlert, LoaderCircle, LockKeyhole, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -121,6 +121,19 @@ export default function LoginPage() {
 
             <div className="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-xs leading-6 text-stone-500">
               使用同一个密钥即可访问图片生成接口和后台管理页，不需要额外登录步骤。
+            </div>
+
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-sm leading-6 text-amber-950">
+              <div className="flex items-center gap-2 font-medium">
+                <CircleAlert className="size-4" />
+                使用与风险提示
+              </div>
+              <div className="mt-2">
+                本项目仅供个人学习、技术研究与非商业交流使用，严禁用于违法违规、批量滥用或其他不当用途。
+              </div>
+              <div className="mt-1">
+                项目基于对 ChatGPT 官网相关能力的研究实现，存在账号被限制、临时封禁或永久封禁的风险。请勿使用常用、大号或高价值账号测试。
+              </div>
             </div>
           </div>
         </div>
