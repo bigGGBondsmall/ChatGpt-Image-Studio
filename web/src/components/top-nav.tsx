@@ -157,6 +157,9 @@ export function TopNav() {
   const [mobileWorkspaceTitle, setMobileWorkspaceTitle] = useState<string | null>(null);
   const mobileHeaderRef = useRef<HTMLElement | null>(null);
   const mobileWorkspaceHeaderRef = useRef<HTMLDivElement | null>(null);
+  const setMobileHeaderRef = (node: HTMLElement | null) => {
+    mobileHeaderRef.current = node;
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -266,7 +269,7 @@ export function TopNav() {
         }}
       />
       {!isMobileWorkspaceRoute ? (
-        <header ref={mobileHeaderRef} className="fixed inset-x-0 top-0 z-40 px-3 lg:hidden">
+        <header ref={setMobileHeaderRef} className="fixed inset-x-0 top-0 z-40 px-3 lg:hidden">
         <div className="rounded-[26px] border border-stone-200 bg-[#f0f0ed] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)]">
           <div className="flex items-center justify-between gap-3">
             <button
@@ -371,7 +374,7 @@ export function TopNav() {
       ) : null}
       {isMobileWorkspaceRoute && mobileNavExpanded ? (
         <div
-          ref={mobileHeaderRef}
+          ref={setMobileHeaderRef}
           className="fixed inset-x-0 top-0 z-40 px-3 lg:hidden"
         >
           <div className="rounded-[24px] border border-stone-200 bg-[#f0f0ed] p-3 shadow-[0_14px_40px_rgba(15,23,42,0.05)]">

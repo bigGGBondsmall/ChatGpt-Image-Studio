@@ -155,7 +155,7 @@ export function useImageSubmit({
       return;
     }
 
-    const sourceReference = editorTarget.image ? buildInpaintSourceReference(editorTarget.image) : null;
+    const sourceReference = editorTarget.image ? buildInpaintSourceReference(editorTarget.image) : undefined;
     const targetConversationId = editorTarget.conversationId ?? selectedConversationId;
     const conversationId = targetConversationId ?? makeId();
     const supportsEditableOutputOptions = editorTarget.image === null;
